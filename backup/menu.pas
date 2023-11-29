@@ -40,7 +40,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
-  cepResponse:= getCep('28635130');
+  cepResponse:= getCep(Edit1.Text);
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else
@@ -48,13 +48,13 @@ begin
 end;
     function TForm1.getCep(cep: string): string;
 const
-  cURL: string = 'https://viacep.com.br/ws/';
+  baseURL: string = 'https://viacep.com.br/ws/';
 var
   httpClient: TFPHTTPClient;
 begin
   httpClient := TFPHTTPClient.Create(nil);
   try
-    Result := httpClient.Get('https://viacep.com.br/ws/' + cep + '/json/');
+    Result := httpClient.Get(baseURL + cep + '/json/');
   except
     Result := httpClient.Get('Requisicao falhou');
   end;

@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Memo1: TMemo;
+    Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -40,7 +41,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
-  cepResponse:= getCep('28635130');
+  cepResponse:= getCep(Edit1.Text);
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else
