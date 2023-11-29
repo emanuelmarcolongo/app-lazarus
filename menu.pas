@@ -15,6 +15,8 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Senha: TLabel;
+    Usuario: TLabel;
     username: TEdit;
     password: TEdit;
     Memo1: TMemo;
@@ -23,6 +25,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure UsuarioClick(Sender: TObject);
   private
      function getCep(cep: string): string;
   public
@@ -39,6 +42,11 @@ implementation
 { TForm1 }
 
 procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.UsuarioClick(Sender: TObject);
 begin
 
 end;
@@ -68,13 +76,12 @@ begin
     if Length(passwordValue) < 6 then
     begin
       ShowMessage('Sua senha precisa ter ao menos 6 caracteres');
-    end;
-    Memo2.Lines.Add('Seu usuário é: ' + usernameValue);
-    Memo2.Lines.Add('Sua senha é: ' + passwordValue);
-  end;
-
-
-
+    end
+    else
+    begin
+      ShowMessage('Seu nome de usuário é:' + usernameValue);
+    end
+   end
 end;
 
     function TForm1.getCep(cep: string): string;
