@@ -54,11 +54,23 @@ begin
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
-    var usernameValue: string;
+   var usernameValue: string;
    var passwordValue: string;
 begin
   usernameValue := username.Text;
   passwordValue := password.Text;
+  if (usernameValue = '') or (passwordValue = '') then
+  begin
+    ShowMessage('Por favor, informe seu usuário e senha.');
+  end
+  else
+  begin
+    Memo2.Lines.Add('Seu usuário é: ' + usernameValue);
+    Memo2.Lines.Add('Sua senha é: ' + passwordValue);
+  end;
+
+
+
 end;
 
     function TForm1.getCep(cep: string): string;

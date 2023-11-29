@@ -59,9 +59,19 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
   usernameValue := username.Text;
   passwordValue := password.Text;
-
-  Memo2.Lines.Add('seu usuário é:' + usernameValue);
-  Memo2.Lines.Add('sua senha é:' + passwordValue);
+  if (usernameValue = '') or (passwordValue = '') then
+  begin
+    ShowMessage('Por favor, informe seu usuário e senha.');
+  end
+  else
+  begin
+    if Length(passwordValue) < 6 then
+    begin
+      ShowMessage('Sua senha precisa ter ao menos 6 caracteres');
+    end;
+    Memo2.Lines.Add('Seu usuário é: ' + usernameValue);
+    Memo2.Lines.Add('Sua senha é: ' + passwordValue);
+  end;
 
 
 
