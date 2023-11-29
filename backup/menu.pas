@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Senha: TLabel;
     Usuario: TLabel;
     username: TEdit;
     password: TEdit;
@@ -53,11 +54,15 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
+  try
   cepResponse:= getCep(Edit1.Text);
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else
-     Memo1.Lines.Add('Sem conteúdo para a requisição');
+   Memo1.Lines.Add('Sem conteúdo para a requisição');
+   except
+      ShowMessage('Erro na requisição');
+   end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -78,9 +83,7 @@ begin
     end
     else
     begin
-
-           ShowMessage('Seu nome de usuário é:' + usernameValue);
-
+      ShowMessage('Seu nome de usuário é:' + usernameValue);
     end
    end
 end;
@@ -91,12 +94,13 @@ const
 var
   httpClient: TFPHTTPClient;
 begin
+  Result := '';
   httpClient := TFPHTTPClient.Create(nil);
   try
     Result := httpClient.Get(baseURL + cep + '/json/');
   except
-    Result := httpClient.Get('Requisicao falhou');
-  end;
+    Result := '';
+  end
   if Assigned(httpClient) then
     FreeAndNil(httpClient);
 end;

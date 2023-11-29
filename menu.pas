@@ -54,11 +54,15 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
+  try
   cepResponse:= getCep(Edit1.Text);
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else
-     Memo1.Lines.Add('Sem conteúdo para a requisição');
+   Memo1.Lines.Add('Sem conteúdo para a requisição');
+   except
+      ShowMessage('Erro na requisição');
+   end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -90,11 +94,12 @@ const
 var
   httpClient: TFPHTTPClient;
 begin
+  Result := '';
   httpClient := TFPHTTPClient.Create(nil);
   try
     Result := httpClient.Get(baseURL + cep + '/json/');
   except
-    Result := httpClient.Get('Requisicao falhou');
+    Result := '';
   end;
   if Assigned(httpClient) then
     FreeAndNil(httpClient);
