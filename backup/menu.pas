@@ -14,7 +14,13 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    Button2: TButton;
+    username: TEdit;
+    password: TEdit;
     Memo1: TMemo;
+    Edit1: TEdit;
+    Memo2: TMemo;
+    procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -46,6 +52,15 @@ begin
    else
      Memo1.Lines.Add('Sem conteúdo para a requisição');
 end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+    var usernameValue: string;
+   var passwordValue: string;
+begin
+  usernameValue := username.Text;
+  passwordValue := password.Text;
+end;
+
     function TForm1.getCep(cep: string): string;
 const
   baseURL: string = 'https://viacep.com.br/ws/';
@@ -61,6 +76,7 @@ begin
   if Assigned(httpClient) then
     FreeAndNil(httpClient);
 end;
+
 
 end.
 

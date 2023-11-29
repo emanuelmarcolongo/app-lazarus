@@ -1,38 +1,72 @@
 object Form1: TForm1
   Left = 996
-  Height = 240
+  Height = 578
   Top = 166
-  Width = 320
+  Width = 679
   Caption = 'Form1'
-  ClientHeight = 240
-  ClientWidth = 320
+  ClientHeight = 578
+  ClientWidth = 679
   OnCreate = FormCreate
   LCLVersion = '3.0.0.1'
   object Memo1: TMemo
-    Left = 16
+    Left = 392
     Height = 116
-    Top = 108
-    Width = 288
+    Top = 120
+    Width = 280
     Lines.Strings = (
       'Memo1'
     )
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 176
-    Height = 25
-    Top = 39
-    Width = 75
+    Left = 568
+    Height = 23
+    Top = 88
+    Width = 99
     Caption = 'Buscar'
     OnClick = Button1Click
     TabOrder = 1
   end
   object Edit1: TEdit
-    Left = 32
+    Left = 392
     Height = 23
-    Top = 41
-    Width = 128
+    Top = 88
+    Width = 160
     TabOrder = 2
     Text = 'Digite o valor do cep'
+  end
+  object Button2: TButton
+    Left = 16
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Enviar'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object Memo2: TMemo
+    Left = 16
+    Height = 122
+    Top = 128
+    Width = 272
+    Lines.Strings = (
+      'Memo2'
+    )
+    TabOrder = 4
+  end
+  object username: TEdit
+    Left = 16
+    Height = 23
+    Top = 40
+    Width = 136
+    TabOrder = 5
+    Text = 'username'
+  end
+  object password: TEdit
+    Left = 16
+    Height = 23
+    Top = 72
+    Width = 136
+    TabOrder = 6
   end
 end
