@@ -55,7 +55,10 @@ procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
   try
+  if Length(Edit1.Text) <> 8 then
+  ShowMessage('o cep digitado deve possuir 8 caracteres');
   cepResponse:= getCep(Edit1.Text);
+
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else
@@ -100,7 +103,7 @@ begin
     Result := httpClient.Get(baseURL + cep + '/json/');
   except
     Result := '';
-  end
+  end;
   if Assigned(httpClient) then
     FreeAndNil(httpClient);
 end;

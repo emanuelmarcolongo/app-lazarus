@@ -55,7 +55,13 @@ procedure TForm1.Button1Click(Sender: TObject);
  var cepResponse: string;
 begin
   try
+  if Length(Edit1.Text) <> 8 then
+  begin
+  ShowMessage('o cep digitado deve possuir 8 caracteres');
+  Exit;
+  end;
   cepResponse:= getCep(Edit1.Text);
+
    if cepResponse <> EmptyStr then
    Memo1.Lines.Add(cepResponse)
    else

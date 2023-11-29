@@ -18,16 +18,17 @@
         <Filename Value="menu.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="80"/>
-        <CursorPos X="7" Y="103"/>
+        <TopLine Value="56"/>
+        <CursorPos X="8" Y="68"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="19">
+    <JumpHistory HistoryIndex="24">
       <Position>
         <Filename Value="menu.pas"/>
         <Caret Line="9" Column="26"/>
@@ -107,6 +108,26 @@
       <Position>
         <Filename Value="menu.pas"/>
         <Caret Line="104" Column="3" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="62" Column="110" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="61" Column="5" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="58" Column="34" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="59" Column="59" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="61" Column="20" TopLine="47"/>
       </Position>
     </JumpHistory>
     <RunParams>
